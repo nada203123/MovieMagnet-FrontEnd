@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+
+<div class="page-container">
+  <app-popup *ngIf="showPopup" [message]="popupMessage" (closeModal)="closePopup()"></app-popup>
+  <div class="filter-container">
+  <div class="filter">
+  <form  class="filter-form" >
+    <div class="filter-section">
+      <label for="genre">Genre: </label>
+      <select id="genre"  [(ngModel)]="filters.genre"  name="genre">
+        
+        <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+      </select>
+    </div>
+    <div class="filter-section">
+      <label for="vote">Rating: </label>
+      <select id="vote"  [(ngModel)]="filters.vote"  name="genre">
+        
+        <option *ngFor="let vote of votes" [value]="vote">{{ vote }}</option>
+      </select>
+    </div>
+    <div class="filter-actions">
+      <button type="button" (click)="resetFilters()">Reset</button>
+      <button type="submit" (click)="applyFilters()">Apply</button>
+    </div>
+  </form>
+ </div>
+ </div>
+ 
+ 
+
+
+<div *ngIf="movies.length > 0 && filteredMovies.length === 0 && !filters.genre && !filters.vote" >
+  
+  <div class="movie-container">
+  <div *ngFor="let movie of movies" class="movie-card" (click)="showMovieDetails(movie.id)">
+    
+    <img [src]="movie.poster" alt="{{ movie.title }}" class="movie-poster" />
+    <h3 class="movie-title">{{ movie.title }}</h3>
+    
+  </div>
+</div>
+</div>
+<div *ngIf="filteredMovies.length > 0" >
+  
+  <div class="movie-container">
+  <div *ngFor="let movie of filteredMovies" class="movie-card" >
+    <img [src]="movie.poster" alt="{{ movie.title }}" class="movie-poster" (click)="showMovieDetails(movie.id)" />
+    
+    <h3 class="movie-title">{{ movie.title }}</h3>
+    <span
+  class="material-icons heart-icon"
+  (click)="toggleFavorite(movie)"
+  [ngClass]="{'favorited': movie.isFavorite}"
+>
+  {{ movie.isFavorite ? 'favorite' : 'favorite_border' }}
+</span>
+    
+  </div>
+</div>
+</div>
+
+<div *ngIf="filteredMovies.length === 0 && (filters.genre || filters.vote)" class="no-movies">
+  <p>No Movies With This Character</p>
+</div>
+<div *ngIf="movies.length === 0">
+  <p>Loading..</p>
+</div>
+</div>
+
+
+  

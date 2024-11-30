@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div *ngIf="movie" class="movie-details-container">
+    <img [src]="movie.poster" alt="{{ movie.title }}" class="movie-poster" />
+    <div class="movie-details">
+    <h1>{{ movie.title }}</h1>
+    <p><strong>Overview:</strong> {{ movie.overview }}</p>
+    <p><strong>Genre:</strong> {{ movie.genre }}</p>
+    <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    <span
+  class="material-icons heart-icona"
+  (click)="toggleFavorite(movie)"
+  [ngClass]="{'favorited': movie.isFavorite}"
+>
+  {{ movie.isFavorite ? 'favorite' : 'favorite_border' }}
+</span>
+ </div>
+</div>
+  <div clas="recommendation-container">
+  <div *ngIf="recommendations.length" >
+    <h2 class="recommendation-title">Recommended Movies</h2>
+    <div class="recommendations"> 
+    <div *ngFor="let movie of recommendations" class="recommendation-card" >
+        <img [src]="movie.poster_url" alt="{{ movie.title }}" class="recommendation-poster" (click)="showMovieDetails(movie.id)" />
+        <h3 class="recommendation-title">{{ movie.title }}</h3>
+        <span
+  class="material-icons heart-icon"
+  (click)="toggleFavorite(movie)"
+  [ngClass]="{'favorited': movie.isFavorite}"
+>
+  {{ movie.isFavorite ? 'favorite' : 'favorite_border' }}
+</span>
+      </div> 
+    </div>
+  </div>
+</div>

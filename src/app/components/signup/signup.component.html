@@ -1,0 +1,170 @@
+<!-- <app-navbar></app-navbar>
+<div class="main-container">
+ 
+  <div class="left-container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center">Sign Up</h2>
+        <form #form="ngForm" (ngSubmit)="signup()" class="form">
+       
+          <div class="form-group">
+            <input
+              class="form-control custom-input"
+              type="text"
+              id="firstname"
+              name="firstname"
+              [(ngModel)]="firstname"
+              required
+              placeholder="Enter your firstname"
+            />
+          </div>
+
+         
+          <div class="form-group">
+            <input
+              class="form-control custom-input"
+              type="text"
+              id="lastname"
+              name="lastname"
+              [(ngModel)]="lastname"
+              required
+              placeholder="Enter your lastname"
+            />
+          </div>
+
+         
+          <div class="form-group">
+            <input
+              class="form-control custom-input"
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="email"
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+
+        
+          <div class="form-group">
+            <input
+              class="form-control custom-input"
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+              placeholder="Enter your password"
+            />
+          </div>
+
+          
+          <div>
+            <button
+              type="submit"
+              class="btn custom-btn btn-block"
+              [disabled]="!firstname || !lastname || !email || !password"
+            >
+              Sign Up
+            </button>
+          </div>
+
+         
+          <div class="text-center mt-3">
+            <span>Already have an account?</span>
+            <a class="d-inline ml-2">Login Now</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="right-container">
+    <img src="/assets/signup.png" alt="Logo" class="signup">
+  </div>
+</div> -->
+
+
+<div class="signup-page">
+  
+  <app-navbar></app-navbar>
+
+ 
+  <div class="signup-page">
+   
+    <div class="background-image"></div>
+  
+    <div class="signup-card">
+      <div class="card">
+        <div class="card-header">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="signup()" #form="ngForm">
+            
+            <div class="form-group">
+              
+              <input
+                type="text"
+                id="firstname"
+                class="form-control"
+                placeholder="Enter your firstname"
+                [(ngModel)]="firstname"
+                name="firstname"
+                required
+              />
+            </div>
+            <div class="form-group">
+              
+              <input
+                type="text"
+                id="lastname"
+                class="form-control"
+                placeholder="Enter your lastname"
+                [(ngModel)]="lastname"
+                name="lastname"
+                required
+              />
+            </div>
+          
+            <div class="form-group">
+             
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Enter your email"
+                [(ngModel)]="email"
+                name="email"
+                required
+              />
+            </div>
+           
+            <div class="form-group">
+              
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                [(ngModel)]="password"
+                name="password"
+                required
+              />
+            </div>
+
+            <div class="text-center">
+              <span>Already have an account ? </span>
+              <a (click)="goToSignIn()" class="d-inline">SignIn</a>
+          </div>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+

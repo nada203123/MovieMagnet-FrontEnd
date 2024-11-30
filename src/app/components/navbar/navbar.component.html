@@ -1,0 +1,38 @@
+
+<nav class="navbar">
+    <div class="navbar-left">
+      <img src="/assets/logo.png" alt="Logo" class="logo" (click)="goToHome()" >
+      <h1 (click)="goToHome()">MovieMagnet</h1>
+    </div>
+   
+    <div class="navbar-right">
+      <div class="search-container">
+        <span class="material-icons search-icon">search</span>
+        <input type="text" class="search-bar" placeholder="Search"  [(ngModel)]="searchQuery"
+        (input)="onSearchInputChange(searchQuery)" >
+        <ul class="suggestions" *ngIf="suggestions.length > 0">
+          <li
+            *ngFor="let suggestion of suggestions"
+            (click)="selectSuggestion(suggestion)"
+          >
+            {{ suggestion.title }}
+          </li>
+        </ul>
+      </div>
+
+
+    <ng-container *ngIf="!isLoggedIn">
+      <h4 (click)="goToSignup()">SignUp</h4>
+      <h4 (click)="goToSignin()">SignIn</h4>
+    </ng-container>
+
+    <ng-container *ngIf="isLoggedIn" class="icons">
+      
+      <span class="material-icons icon" (click)="goToFavorites()">favorite</span>
+      <span class="material-icons icon" (click)="goToProfile()">account_circle</span>
+      <span class="material-icons icon" (click)="logout()">exit_to_app</span>
+    </ng-container>
+        
+
+    </div>
+  </nav>

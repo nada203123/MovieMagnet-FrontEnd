@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="page-container">
+    <div class="page-title">
+        <h1>Favorite Movies</h1>
+      </div>
+  <div *ngIf="movies.length === 0" class="no-movies">
+    <p>No favorite movies yet!</p>
+  </div>
+
+  <div *ngIf="movies.length > 0" class="movie-container">
+    
+    <div *ngFor="let movie of movies" class="movie-card" (click)="showMovieDetails(movie.movie_id)">
+      <img [src]="movie.poster_url" alt="{{ movie.title }}" class="movie-poster" />
+      <h3 class="movie-title">{{ movie.title }}</h3>
+
+      
+    </div>
+  </div>
+</div>

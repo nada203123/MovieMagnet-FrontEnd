@@ -1,0 +1,53 @@
+<div class="otp-page">
+  
+  <app-navbar></app-navbar>
+
+ 
+  <div class="otp-page">
+   
+    <div class="background-image"></div>
+  
+    <div class="otp-card">
+      <div class="card">
+        <div class="card-header">
+          <h3>Verify Your Account</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="verify()" #form="ngForm">
+            
+            <div class="form-group">
+             
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Enter your email"
+                [(ngModel)]="email"
+                name="email"
+                required
+              />
+            </div>
+           
+            <div class="form-group">
+              
+              <input
+                type="text"
+                id="otp"
+                class="form-control"
+                placeholder="Enter the otp code"
+                [(ngModel)]="otp"
+                name="otp"
+                required
+              />
+            </div>
+
+            
+            
+            <button type="submit" class="btn btn-primary">Verify</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

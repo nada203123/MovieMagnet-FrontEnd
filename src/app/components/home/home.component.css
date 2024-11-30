@@ -1,0 +1,122 @@
+
+.page-container {
+  display: flex;
+  flex-direction: column; /* Stack the filter and movie containers vertically */
+  align-items: center; /* Center the content horizontally */
+  padding: 20px;
+  }
+
+  .filter-container {
+    width: 100%; /* Make the filter container span the full width */
+    margin-bottom: 20px; /* Add space between the filter and movie container */
+    display: flex;
+    justify-content: center; /* Center the filter content */
+  }
+  .filter{
+    background: #ffffff;
+  padding: 1rem;
+  
+  max-width: 800px; /* Optional: Limit the filter width for better appearance */
+  width: 100%;
+  margin-left: 1000px;
+  }
+  
+  .filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .filter-section {
+ 
+  min-width: 100px;
+  margin-top:5px
+  }
+  
+  .filter-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  
+  .filter-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-actions button[type='button'] {
+    background: #ccc;
+  }
+  
+  .filter-actions button[type='submit'] {
+    background: #a90505;
+    color: white;
+  }
+  
+
+
+
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to new lines */
+    justify-content: center; /* Center the cards */
+    gap: 15px; /* Add space between cards */
+    padding: 20px;
+    
+  }
+  
+  .movie-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover */
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+  }
+  
+  .movie-poster {
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+  }
+  
+  .movie-title {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .no-movies {
+    text-align: center;
+    font-size: 20px;
+    color: #c12525;
+  }
+  
+  .heart-icon {
+  
+        
+    cursor: pointer;
+    color: rgb(157, 1, 1);    
+    font-size: 20px; 
+    z-index: 2;  
+    opacity: 0;   
+   
+   
+  }
+  
+  .heart-icon.favorited {
+    color: rgb(157, 1, 1); 
+  }
+  
+  .movie-card:hover .heart-icon {
+    opacity: 1; 
+  }
