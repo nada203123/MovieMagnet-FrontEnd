@@ -27,7 +27,7 @@ export class SignupComponent {
     const data = { first_name:this.firstname, last_name:this.lastname, email: this.email, password: this.password };
     console.log('data',data)
     this.authService.signup(data).subscribe((response) => {
-      alert('OTP sent to your email!');
+   
       this.router.navigate(['/otp']);
     },
     (error) => {

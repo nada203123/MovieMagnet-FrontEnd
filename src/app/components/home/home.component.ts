@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
         this.movies = response.movies; 
         this.filteredMovies = [...this.movies];
         console.log('Movies fetched:', response.movies);
-        this.loadFavorites();
+      
         
       },
       error: (error) => {

@@ -22,7 +22,7 @@ export class OtpComponent {
     const data = { email: this.email, otp: this.otp };
     this.authService.verify(data).subscribe(
       (response) => {
-        alert('Account verified successfully!');
+        
         this.router.navigate(['signin']);
 
       } ,
