@@ -1,15 +1,16 @@
 # Stage 1: Build the Angular application
-FROM node:14 AS build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
+RUN npm install -g @angular/cli
 # Install dependencies
-COPY package.json package-lock.json ./
+COPY package*.json ./
 RUN npm install
 
 # Copy source code and build the Angular app
 COPY . .
-RUN npm run build --prod
+RUN ng build --configuration production
 
 # Stage 2: Serve Angular application using Nginx
 FROM nginx:alpine
