@@ -11,7 +11,7 @@ MovieMagnet est une application web de recommandation de films qui permet aux ut
 - Gestion des favoris : ajout, suppression, consultation de la liste.
 - Affichage des films recommandés en fonction d’un film sélectionné.
 
-## 🏗 Pages principales
+## 🖥 Pages principales
 
 - Page d’inscription (sign up) avec vérification de compte par code.
 - Page de connexion (login).
@@ -19,3 +19,4 @@ MovieMagnet est une application web de recommandation de films qui permet aux ut
 - Page de détails d’un film (description, image, informations).
 - Section “Recommended Movies” affichant les films similaires.
 - Page “Favorite Movies” avec la liste des favoris de l’utilisateur.
+
